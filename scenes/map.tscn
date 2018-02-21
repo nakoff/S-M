@@ -1,0 +1,194 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/map.gd" type="Script" id=1]
+[ext_resource path="res://sprites/bg_up.png" type="Texture" id=2]
+[ext_resource path="res://sprites/bg_down.png" type="Texture" id=3]
+[ext_resource path="res://sprites/timer.png" type="Texture" id=4]
+[ext_resource path="res://scripts/map_logic.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.201379, 0.371094, 0.200043, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="map" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="bg" type="Sprite" parent="." index="0"]
+
+position = Vector2( 360, 160 )
+scale = Vector2( 1, 1.08478 )
+z_index = -2
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="bg_down" type="Sprite" parent="bg" index="0"]
+
+position = Vector2( 0, 588.241 )
+scale = Vector2( 1, 0.914409 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="timer" type="Sprite" parent="bg" index="1"]
+
+position = Vector2( 0, -110.622 )
+z_index = 2
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="label" type="Label" parent="bg/timer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -30.0
+margin_top = -18.0
+margin_bottom = 5.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0.675781, 0.163666, 0.211677, 1 )
+custom_constants/shadow_as_outline = 964
+text = "0"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants" ]
+
+[node name="panel" type="Panel" parent="." index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 440.0
+margin_right = 720.0
+margin_bottom = 1280.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="panel2" type="Panel" parent="." index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 340.0
+margin_right = 720.0
+margin_bottom = 440.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/panel = SubResource( 1 )
+
+[node name="tween" type="Tween" parent="." index="3"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="map_logic" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
+script = ExtResource( 5 )
+
+[node name="cursor" type="Area2D" parent="map_logic" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="shape" type="CollisionShape2D" parent="map_logic/cursor" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="elements" type="Node2D" parent="." index="5"]
+
+[node name="player_spawn" type="Position2D" parent="." index="6"]
+
+position = Vector2( 90, 290 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="enemy_spawn" type="Position2D" parent="." index="7"]
+
+position = Vector2( 640, 290 )
+
+[node name="timer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 15.0
+one_shot = false
+autostart = false
+
+[node name="super_actions" type="Node2D" parent="." index="9"]
+
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="super_actions" index="0"]
+
+position = Vector2( 100, 380 )
+
+[node name="2" type="Position2D" parent="super_actions" index="1"]
+
+position = Vector2( 230, 380 )
+
+[node name="3" type="Position2D" parent="super_actions" index="2"]
+
+position = Vector2( 490, 380 )
+
+[node name="4" type="Position2D" parent="super_actions" index="3"]
+
+position = Vector2( 620, 380 )
+
+

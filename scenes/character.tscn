@@ -1,0 +1,395 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scripts/character.gd" type="Script" id=1]
+[ext_resource path="res://sprites/characters/default/fleg_r.png" type="Texture" id=2]
+[ext_resource path="res://sprites/characters/default/leg.png" type="Texture" id=3]
+[ext_resource path="res://sprites/characters/default/fleg_l.png" type="Texture" id=4]
+[ext_resource path="res://sprites/characters/default/root.png" type="Texture" id=5]
+[ext_resource path="res://sprites/characters/default/body.png" type="Texture" id=6]
+[ext_resource path="res://sprites/characters/default/hand.png" type="Texture" id=7]
+[ext_resource path="res://sprites/characters/default/farm_l.png" type="Texture" id=8]
+[ext_resource path="res://sprites/characters/default/arm_l.png" type="Texture" id=9]
+[ext_resource path="res://sprites/characters/default/farm_r.png" type="Texture" id=10]
+[ext_resource path="res://sprites/characters/default/arm_r.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 3.60408, 10.8818 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 1, 0.0117188, 0.10437, 1 )
+draw_center = false
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 1, 1, 1, 1 )
+border_blend = true
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0.857387, 0.988281, 0.748932, 0.6 )
+shadow_size = 2
+anti_aliasing = false
+anti_aliasing_size = 1
+_sections_unfolded = [ "Anti Aliasing", "Border", "Corner Radius", "Expand Margin", "Shadow" ]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 1, 0.0703125, 0.0703125, 0.727255 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 1
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Corner Radius", "Shadow" ]
+
+[node name="character" type="Area2D"]
+
+position = Vector2( 0, 3.58316 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="0"]
+
+visible = false
+position = Vector2( 1.17169, -85.8578 )
+scale = Vector2( 8.80058, 7.80367 )
+shape = SubResource( 1 )
+
+[node name="anim" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+blend_times = [  ]
+
+[node name="tween" type="Tween" parent="." index="2"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="skin" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 0, -53.5832 )
+scale = Vector2( 0.21365, 0.21365 )
+z_index = -1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="root" type="Node2D" parent="skin" index="0"]
+
+[node name="fleg_r" type="Sprite" parent="skin/root" index="0"]
+
+position = Vector2( -52.1614, 10.5764 )
+rotation = -0.0941766
+z_index = -1
+texture = ExtResource( 2 )
+offset = Vector2( 0, 60.3396 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="leg_r" type="Sprite" parent="skin/root/fleg_r" index="0"]
+
+position = Vector2( -4.86324, 129.046 )
+rotation = 0.160366
+texture = ExtResource( 3 )
+offset = Vector2( 0, 33.7828 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="piv" type="Node2D" parent="skin/root/fleg_r/leg_r" index="0"]
+
+position = Vector2( -3.8147e-06, 67.5654 )
+rotation = 0.117464
+scale = Vector2( 0.834564, 0.832443 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="piv2" type="Node2D" parent="skin/root/fleg_r/leg_r/piv" index="0"]
+
+position = Vector2( -83.4861, 22.1207 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="fleg_l" type="Sprite" parent="skin/root" index="1"]
+
+modulate = Color( 0.789062, 0.733582, 0.733582, 1 )
+position = Vector2( 46.8782, 7.16616 )
+z_index = -1
+texture = ExtResource( 4 )
+offset = Vector2( 3.45892, 64.7262 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="leg_l" type="Sprite" parent="skin/root/fleg_l" index="0"]
+
+position = Vector2( 11.5496, 128.581 )
+texture = ExtResource( 3 )
+offset = Vector2( -0.499939, 42.8545 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="piv" type="Node2D" parent="skin/root/fleg_l/leg_l" index="0"]
+
+position = Vector2( 1.50006, 82.2677 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="piv2" type="Node2D" parent="skin/root/fleg_l/leg_l/piv" index="0"]
+
+position = Vector2( 71.9999, 11.2609 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="hip" type="Sprite" parent="skin/root" index="2"]
+
+position = Vector2( -0.441376, 32.8815 )
+z_index = 1
+texture = ExtResource( 5 )
+offset = Vector2( 0.441376, -32.8815 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="body" type="Sprite" parent="skin/root/hip" index="0"]
+
+position = Vector2( -2.36179, -75.6681 )
+z_index = -1
+texture = ExtResource( 6 )
+offset = Vector2( -7.19684, -118.901 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="head" type="Sprite" parent="skin/root/hip/body" index="0"]
+
+position = Vector2( -8.42456, -251.468 )
+rotation = -0.0860397
+texture = ExtResource( 7 )
+offset = Vector2( -10, -135.131 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="head_piv" type="Node2D" parent="skin/root/hip/body/head" index="0"]
+
+position = Vector2( 9.99975, -259 )
+rotation = 0.0860397
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="piv2" type="Node2D" parent="skin/root/hip/body/head/head_piv" index="0"]
+
+position = Vector2( -121.546, -70.5098 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="farm_l" type="Sprite" parent="skin/root/hip/body" index="1"]
+
+position = Vector2( 36.951, -221.897 )
+rotation = 0.241035
+z_index = -1
+texture = ExtResource( 8 )
+offset = Vector2( 30, 45.0437 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="arm_l" type="Sprite" parent="skin/root/hip/body/farm_l" index="0"]
+
+position = Vector2( 57.074, 82.6707 )
+rotation = 0.777235
+texture = ExtResource( 9 )
+offset = Vector2( 90, 22.5219 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="piv" type="Node2D" parent="skin/root/hip/body/farm_l/arm_l" index="0"]
+
+position = Vector2( 149.999, 22.5216 )
+rotation = -1.01827
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="piv2" type="Node2D" parent="skin/root/hip/body/farm_l/arm_l/piv" index="0"]
+
+position = Vector2( 71.5527, -74.9782 )
+scale = Vector2( 0.682314, 0.989978 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="arm_piv" type="Node2D" parent="skin/root/hip/body/farm_l/arm_l" index="1"]
+
+position = Vector2( 100.758, 22.5696 )
+
+[node name="farm_r" type="Sprite" parent="skin/root/hip/body" index="2"]
+
+position = Vector2( -86.2215, -205.416 )
+z_index = 2
+texture = ExtResource( 10 )
+offset = Vector2( -40, 45.0437 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="arm_r" type="Sprite" parent="skin/root/hip/body/farm_r" index="0"]
+
+position = Vector2( -72.926, 95.3076 )
+scale = Vector2( 1, 1.03135 )
+z_index = -1
+texture = ExtResource( 11 )
+offset = Vector2( 10, 90.0874 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="piv" type="Node2D" parent="skin/root/hip/body/farm_r/arm_r" index="0"]
+
+editor/display_folded = true
+position = Vector2( 10, 157.653 )
+scale = Vector2( 0.987976, 1.01613 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="piv2" type="Node2D" parent="skin/root/hip/body/farm_r/arm_r/piv" index="0"]
+
+position = Vector2( -77.3474, 29.0335 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="arm_piv" type="Node2D" parent="skin/root/hip/body/farm_r/arm_r" index="1"]
+
+position = Vector2( 4.67914, 147.536 )
+
+[node name="body_piv" type="Node2D" parent="skin/root/hip/body" index="3"]
+
+[node name="health_bar" type="Panel" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -30.0
+margin_top = -285.0
+margin_right = 35.0
+margin_bottom = -251.0
+rect_scale = Vector2( 2, 1 )
+rect_pivot_offset = Vector2( 30, 10.9636 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/panel = SubResource( 2 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="health" type="Panel" parent="health_bar" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 65.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0.155945, 23.0148 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/panel = SubResource( 3 )
+_sections_unfolded = [ "Rect", "custom_styles" ]
+
+[node name="login" type="Label" parent="health_bar" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 6.0
+margin_right = 65.0
+margin_bottom = 23.0
+rect_scale = Vector2( 1, 2 )
+rect_pivot_offset = Vector2( 30, 5.59224 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color_shadow = Color( 0.425781, 0.0665283, 0.0665283, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/line_spacing = 0
+custom_constants/shadow_as_outline = 3
+text = "login"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+

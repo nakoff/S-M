@@ -1,0 +1,201 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/characters/default/body.png" type="Texture" id=2]
+[ext_resource path="res://sprites/characters/default/hand.png" type="Texture" id=3]
+[ext_resource path="res://sprites/characters/default/arm_l.png" type="Texture" id=4]
+[ext_resource path="res://sprites/characters/default/arm_r.png" type="Texture" id=5]
+[ext_resource path="res://sprites/characters/default/leg.png" type="Texture" id=6]
+
+[node name="player_setup" type="Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 720.0
+margin_bottom = 1280.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="character" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 140, 350 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 2
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Panel" parent="character" index="3"]
+
+visible = false
+
+[node name="health" parent="character" index="4"]
+
+visible = false
+
+[node name="login" parent="character" index="5"]
+
+visible = false
+
+[node name="skin" parent="character" index="6"]
+
+editor/display_folded = true
+
+[node name="farm_l" parent="character/skin/root/hip/body" index="1"]
+
+rotation = 0.129647
+
+[node name="arm_l" parent="character/skin/root/hip/body/farm_l" index="0"]
+
+position = Vector2( 57.0741, 82.6707 )
+rotation = 0.888623
+
+[node name="body" type="TextureButton" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 234.0
+margin_top = 670.0
+margin_right = 434.0
+margin_bottom = 1010.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="head" type="TextureButton" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 194.0
+margin_top = 410.0
+margin_right = 461.0
+margin_bottom = 711.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 3 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="arm_l" type="TextureButton" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 474.0
+margin_top = 760.0
+margin_right = 714.0
+margin_bottom = 890.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="arm_r" type="TextureButton" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 138.0
+margin_top = 743.0
+margin_right = 258.0
+margin_bottom = 950.0
+rect_rotation = 25.2995
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="leg_l" type="TextureButton" parent="." index="5"]
+
+modulate = Color( 0.839844, 0.77095, 0.77095, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 360.0
+margin_top = 1051.0
+margin_right = 439.0
+margin_bottom = 1170.0
+rect_rotation = 0.0186013
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Material", "Rect", "Textures", "Visibility" ]
+
+[node name="reg_r" type="TextureButton" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 237.0
+margin_top = 1051.0
+margin_right = 316.0
+margin_bottom = 1170.0
+rect_rotation = 0.0186013
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+
+[editable path="character"]
