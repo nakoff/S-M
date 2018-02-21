@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://prefabs/characters/ded_moroz/arm_l.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/characters/ded_moroz/arm_l.gd" type="Script" id=2]
+
+[node name="arm_l" type="Sprite"]
+
+position = Vector2( -1.30662, -8.95933 )
+rotation = 0.280986
+scale = Vector2( 0.928712, 1.48616 )
+texture = ExtResource( 1 )
+offset = Vector2( 51.6067, -3.8002 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+

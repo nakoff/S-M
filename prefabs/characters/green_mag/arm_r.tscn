@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://prefabs/characters/green_mag/arm_r.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/characters/green_mag/arm_r.gd" type="Script" id=2]
+
+[node name="arm_r" type="Sprite"]
+
+position = Vector2( -136.524, 11.5666 )
+rotation = 1.35206
+scale = Vector2( 2.14779, 2.37425 )
+z_index = 1
+texture = ExtResource( 1 )
+offset = Vector2( -0.217712, -55.6246 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+
